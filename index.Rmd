@@ -7,6 +7,8 @@ output: html_document
 
 An introduction of the problem domain and a description of the variable(s) you are choosing to analyze (and why!)
 
+I chose to analyze aapi jail rates over the years. I chose the rates by year by state, the percentage of the total by year by state, the rate at which the 4 different urban types experienced aapi jail rates, and the change in aapi jail rates compared to the total jail rate change. I am analyzing this because often times when jail and prison are concerned, the conversation usually sways towards black or latinx races compared to whites. This being said I wanted to study a group outside of this norm to see whether or not there were any outstanding patterns to find.
+
 ### Summary Information
 
 Write a summary paragraph of findings that includes the 5 values calculated from your summary information R script
@@ -19,16 +21,36 @@ These will likely be calculated using your DPLYR skills, answering questions suc
 
 Feel free to calculate and report values that you find relevant. Again, remember that the purpose is to think about how these measure of incarceration vary by race.
 
+Our findings show that county setting does in fact change the aapi rate of jail. Those from either rural or small/mid counties showed a significantly larger rate of jail than those in suburban/urban counties. Interestingly, for almost all of our data, the data shows 0 aapi jail time until about the 1990's. This is slightly skewing our data as the total jail population has had time to grow in numbers by this point. If the total jail rate goes from 1,000 to 1,010 it is a 1% increase but if the aapi jail rate goes up by 10 from 1 to 11, then it is an 1100% increase. Even if we were to cut out the data from before 1990's the population already in jail that is being accounted for by the data would skew our results. We see this in our year_percents dataset where after the 1990's the aapi_percentage is constantly over 90%. This data even reaches beyond 100% which may seem impossible but reinforces the idea that we are working with biased data and slight changes on the smaller dataset (aapi) has larger percentage changes than on the data that has already settled down (total).
+
 ### The Dataset
 
-Who collected the data?  
+Who collected the data?
+
+Vera
+
 How was the data collected or generated?  
+
+The data was collected through two data collections. The census of jails (COJ) and the Bureau of Justice Statistics (BJS)
+
 Why was the data collected?  
 How many observations (rows) are in your data?  
+
+Since statewide data does not delve deep enough to talk about the causes and consequences, we need to look at more specific data like the country level of jails in order to get a better picture of waht the impacts really are. 
+
+153811 rows
+
 How many features (columns) are in the data?  
-What, if any, ethical questions or questions of power do you need to consider when working with this data?  
+
+23 columns
+
+What, if any, ethical questions or questions of power do you need to consider when working with this data?
+
+We need to also consider whether or not there were any outside reasons why the results may be the way they be. Often time people talk about the higher rate of black incarceration and many use this as an argument that black people commit more crimes. We can acknowledge that there is a higher black incarceration rate, but also consider why that may be. Are there any political systems in place that would cause a higher incarceration rate amongst a certain race. Does housing in certain areas affect this.
+
 What are possible limitations or problems with this data?   (at least 200 words)
 
+I noticed a significant number of NAN values in the data. While NAN values are not a problem and can occur in datasets, the overwhelming number of them in this dataset is slightly concerning. As stated above in the summary, the NAN values in the aapi columns cause our results to skew. For example 10 has less of an effect on 1,000 than it does on 1. Even if the aapi population were to grow by the same number as the total, because the total has already been increased by so much, the change would not be the same. Also since we do not have access to the total population statistic, we are not able to cut out values to salvage the data. Going back to the NAN values, because there are so many NAN values in so many columns, we find that if we were to do rates based off one column, we would most likely run into a lot of NAN calculated values for certain years. This could limit what time frames we are able to look at and may prevent us from finding accurate overall patterns as we would be basing our graphs off of incomplete data
 
 ### Trends Over Time Chart
 
@@ -59,6 +81,9 @@ The second chart that you will create and include will show how two different (c
 - The chart needs a clear title 
 - If you choose to add a color encoding (not required), you need a legend for your different color and a clear legend title
 
+``````{r, echo = FALSE, code = readLines("chart2_example.R")}
+```
+
 ### Map
 
 Include a chart. Make sure to describe why you included the chart, and what patterns emerged
@@ -69,3 +94,5 @@ The last chart that you will create and include will show how a variable is dist
 - Your color scale needs a legend with a clear label
 - Use a map based coordinate system to set the aspect ratio of your map
 
+``````{r, echo = FALSE, code = readLines("map_example.R")}
+```
