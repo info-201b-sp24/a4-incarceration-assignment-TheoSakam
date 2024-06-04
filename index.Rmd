@@ -69,8 +69,7 @@ When we say "clear" or "human readable" titles and labels, that means that you s
 Here's an example of how to run an R script inside an RMarkdown file:
 
 ``````{r, echo = FALSE, code = readLines("chart1_example.R")}
-chart
-```
+``````
 
 ### Variable Comparison Chart
 
@@ -83,8 +82,7 @@ The second chart that you will create and include will show how two different (c
 - If you choose to add a color encoding (not required), you need a legend for your different color and a clear legend title
 
 ``````{r, echo = FALSE, code = readLines("chart2_example.R")}
-chart2
-```
+``````
 
 ### Map
 
@@ -97,5 +95,4 @@ The last chart that you will create and include will show how a variable is dist
 - Use a map based coordinate system to set the aspect ratio of your map
 
 ``````{r, echo = FALSE, code = readLines("map_example.R")}
-mp
-```
+``````

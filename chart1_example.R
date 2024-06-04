@@ -13,3 +13,4 @@ library(ggplot2)
 chart <- ggplot(year_percents, aes(x = year, y = aapi_percentage)) +
   geom_line() +
   labs(x = "Year", y = "AAPI Percentage", title = "Percentage of aapi jail rate over time")
+chart

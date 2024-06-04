@@ -11,3 +11,4 @@ library(ggplot2)
 chart2 <- ggplot(state_year_comparison, aes(x = total_aapi_jail_pop_rate, y = total_jail_pop_rate)) +
   geom_point() +
   labs(x = "AAPI Jail Population Rate", y = "Total Jail Population Rate", title = "Total Jail Population Rate vs AAPI Jail Population Rate")
+chart2
