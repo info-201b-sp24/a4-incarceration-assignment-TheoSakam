@@ -10,6 +10,6 @@ year_percents <- year_totals %>%
 
 library(ggplot2)
 
-ggplot(year_percents, aes(x = year, y = aapi_percentage)) +
+chart <- ggplot(year_percents, aes(x = year, y = aapi_percentage)) +
   geom_line() +
   labs(x = "Year", y = "AAPI Percentage", title = "Percentage of aapi jail rate over time")
